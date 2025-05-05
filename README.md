@@ -51,8 +51,16 @@ cp lib/libphysics.so ../../../../target/natives/
 
 ### Запуск
 ```bash
+# Стандартный запуск через Maven
 cd MyMavenProject
 mvn exec:java
+
+# Запуск через Fat JAR (после сборки)
+cd MyMavenProject
+java -Djava.library.path=target/natives -jar target/MyMavenProject-1.0-SNAPSHOT-fat.jar
+
+# Или используя скрипт (работает из любой директории)
+./MyMavenProject/run-anywhere.sh
 ```
 
 ## Структура проекта
